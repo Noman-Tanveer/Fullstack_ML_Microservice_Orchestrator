@@ -21,6 +21,9 @@ function ImageUploadInterface() {
       <input type="file" onChange={onFileChange} />
       <button onClick={onFileUpload}>Upload</button>
       {image && <img src={image} alt="img" />}
+      <>
+        <img src={img} alt="icons" />
+      </>
     </div>
   );
 }
