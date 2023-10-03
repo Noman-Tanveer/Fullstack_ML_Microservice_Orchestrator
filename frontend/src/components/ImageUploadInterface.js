@@ -1,31 +1,41 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function ImageUploadInterface() {
-  const [selectedFile, setSelectedFile] = useState(null);
+function ImageUploader() {
   const [image, setImage] = useState(null);
+  const [resultImage, setResultImage] = useState(null);
 
-  const onFileChange = event => {
-    setSelectedFile(event.target.files[0]);
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
   };
 
-  const onFileUpload = async () => {
-    const formData = new FormData();
-    formData.append('image', selectedFile);
-    const res = await axios.post('/api/upload', formData);
-    setImage(res.data);
+  const handleUpload = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('image', image);
+
+      const response = await axios.post('/api/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      // Set the result image received from the backend
+      setResultImage(response.data.image);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
   };
 
   return (
     <div>
-      <input type="file" onChange={onFileChange} />
-      <button onClick={onFileUpload}>Upload</button>
-      {image && <img src={image} alt="img" />}
-      <>
-        <img src={img} alt="icons" />
-      </>
+      <h2>Image Uploader</h2>
+      <input type="file" accept="image/*" onChange={handleImageChange} />
+      <button onClick={handleUpload}>Detect</button>
+      {resultImage && <img src={`data:image/jpeg;base64,${resultImage}`} alt="Result" />}
     </div>
   );
 }
 
-export default ImageUploadInterface
+export default ImageUploader;
