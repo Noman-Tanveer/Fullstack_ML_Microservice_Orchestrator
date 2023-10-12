@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import ChatInterface from './components/ChatInterface';
 import PromptInterface from './components/PromptInterface';
 import ImageUploadInterface from './components/ImageUploadInterface';
+import "./App.css"
 
 function App() {
   return (

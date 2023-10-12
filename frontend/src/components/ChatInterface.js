@@ -85,6 +85,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>Chat with (Chatgpt-3.5) LLM</h2>
       <div style={{ position:"relative", height: "800px", width: "700px"  }}>
         <MainContainer>
           <ChatContainer>

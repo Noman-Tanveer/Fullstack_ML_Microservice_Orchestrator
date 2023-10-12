@@ -1,10 +1,11 @@
 {
-  "name": "Fullstack_ML_Microservice_Orchestrator",
+  "name": "fullstack_ml_microservice_orchestrator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Client app to call ml workflows",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,14 @@
     "express": "^4.18.2",
     "mongoose": "^7.5.2",
     "multer": "^1.4.5-lts.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noman-Tanveer/Fullstack_ML_Microservice_Orchestrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Noman-Tanveer/Fullstack_ML_Microservice_Orchestrator/issues"
+  },
+  "homepage": "https://github.com/Noman-Tanveer/Fullstack_ML_Microservice_Orchestrator#readme"
 }

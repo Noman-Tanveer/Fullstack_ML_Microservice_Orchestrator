@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Chat.css'
+import './Prompt.css'
 
 function ImageFetcher() {
   const [prompt, setPrompt] = useState('');
@@ -40,7 +40,7 @@ function ImageFetcher() {
 
   return (
     <div className="ImageFetcher-container">
-      <h2>Generate Image</h2>
+      <h2>Generate Image with Stable Diffusion</h2>
       <input
         type="text"
         placeholder="Enter a prompt"

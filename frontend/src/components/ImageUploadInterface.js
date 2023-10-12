@@ -30,7 +30,7 @@ function ImageUploader() {
 
   return (
     <div>
-      <h2>Image Uploader</h2>
+      <h2>Object Detection with Yolo</h2>
       <input type="file" accept="image/*" onChange={handleImageChange} />
       <button onClick={handleUpload}>Detect</button>
       {resultImage && <img src={`data:image/jpeg;base64,${resultImage}`} alt="Result" />}
